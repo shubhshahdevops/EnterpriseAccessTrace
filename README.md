@@ -57,7 +57,7 @@ Windows environment
 
 Steps  
 1. Clone the repository  
-   git clone https://github.com/yourusername/EnterpriseAccessTrace.git  
+   git clone https://github.com/shubhshahdevops/EnterpriseAccessTrace.git  
 
 2. Navigate to the project folder  
    cd EnterpriseAccessTrace  
