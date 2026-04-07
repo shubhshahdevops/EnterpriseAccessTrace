@@ -1,7 +1,0 @@
-﻿Scanning: C:\TestPermissions
-Scanning: C:\TestPermissions\Finance
-Scanning: C:\TestPermissions\HR
-Scanning: C:\TestPermissions\Shared
-Scanning: C:\TestPermissions\Finance\Payroll
-Scanning: C:\TestPermissions\Finance\Reports
-Scanning: C:\TestPermissions\HR\Employees
