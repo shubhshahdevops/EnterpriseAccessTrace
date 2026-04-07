@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enterprise Access Trace Report</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(180deg, #0b1220 0%, #111827 100%);
+            color: #f8fafc;
+        }
+        .page {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 28px;
+        }
+        .hero {
+            margin-bottom: 22px;
+        }
+        .hero h1 {
+            margin: 0;
+            font-size: 30px;
+            font-weight: 800;
+        }
+        .hero p {
+            margin: 10px 0 0;
+            color: #94a3b8;
+            font-size: 15px;
+        }
+        .grid-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 22px;
+        }
+        .stat-card, .panel, .chart-card {
+            background: rgba(30, 41, 59, 0.92);
+            border: 1px solid #334155;
+            border-radius: 16px;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.22);
+        }
+        .stat-card {
+            padding: 18px;
+        }
+        .stat-label {
+            color: #94a3b8;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+        .stat-value {
+            font-size: 34px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        .stat-sub {
+            font-size: 13px;
+        }
+        .blue { color: #60a5fa; }
+        .green { color: #4ade80; }
+        .amber { color: #fbbf24; }
+        .red { color: #f87171; }
+
+        .panel {
+            padding: 20px;
+            margin-bottom: 22px;
+        }
+        .panel h2 {
+            margin: 0 0 12px 0;
+            font-size: 22px;
+        }
+        .panel p {
+            color: #d1d5db;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .chart-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-bottom: 22px;
+        }
+        .chart-card {
+            padding: 20px;
+        }
+        .chart-card h3 {
+            margin: 0 0 14px 0;
+            font-size: 18px;
+        }
+        .svg-chart {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .empty-state {
+            color: #94a3b8;
+            padding: 20px 0;
+        }
+
+        .table-panel {
+            background: rgba(30, 41, 59, 0.92);
+            border: 1px solid #334155;
+            border-radius: 16px;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.22);
+            padding: 20px;
+            margin-bottom: 22px;
+        }
+        .table-panel h2 {
+            margin: 0 0 14px 0;
+            font-size: 22px;
+        }
+        .table-wrap {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px 10px;
+            border-bottom: 1px solid #334155;
+            font-size: 14px;
+            vertical-align: top;
+        }
+        th {
+            color: #cbd5e1;
+            font-weight: 700;
+        }
+        td {
+            color: #e5e7eb;
+        }
+        .badge {
+            display: inline-block;
+            min-width: 74px;
+            text-align: center;
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        .badge.high {
+            background: #7f1d1d;
+            color: #fecaca;
+        }
+        .badge.medium {
+            background: #78350f;
+            color: #fde68a;
+        }
+        .badge.low {
+            background: #14532d;
+            color: #bbf7d0;
+        }
+        .badge.unknown {
+            background: #334155;
+            color: #e2e8f0;
+        }
+
+        .footer-note {
+            color: #94a3b8;
+            font-size: 13px;
+            margin-top: 8px;
+        }
+
+        @media (max-width: 1100px) {
+            .grid-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .chart-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 640px) {
+            .grid-stats {
+                grid-template-columns: 1fr;
+            }
+            .page {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="hero">
+            <h1>Enterprise Access Trace</h1>
+            <p>Permission analysis report for C:/TestPermissions</p>
+        </div>
+
+        <div class="grid-stats">
+            
+        <div class="stat-card">
+            <div class="stat-label">Total ACL Records</div>
+            <div class="stat-value">40</div>
+            <div class="stat-sub blue">7 paths scanned</div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-label">Resolved Access Paths</div>
+            <div class="stat-value">52</div>
+            <div class="stat-sub green">6 identities resolved</div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-label">Drift Findings</div>
+            <div class="stat-value">7</div>
+            <div class="stat-sub amber">Broad access and drift indicators</div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-label">Exposure Score</div>
+            <div class="stat-value">59</div>
+            <div class="stat-sub red">Higher score suggests more review needed</div>
+        </div>
+        
+        </div>
+
+        <div class="panel">
+            <h2>Executive Summary</h2>
+            <p>
+                This report summarizes file-system access data collected from the selected scan scope.
+                It highlights permission distribution, identity concentration, matched target access paths,
+                and broad-access indicators that may represent permission drift or unnecessary exposure.
+            </p>
+            <div class="footer-note">
+                Scope scanned: C:/TestPermissions • Unique paths: 7 • Unique identities: 6
+            </div>
+        </div>
+
+        <div class="chart-grid">
+            <div class="chart-card"><h3>Permission Distribution</h3><svg width="760" height="260" viewBox="0 0 760 260" class="svg-chart"><text x="10" y="48" fill="#cbd5e1" font-size="13">FullControl</text><rect x="160" y="30" rx="8" ry="8" width="560" height="26" fill="#3b82f6"></rect><text x="730" y="48" fill="#f8fafc" font-size="13">14</text><text x="10" y="86" fill="#cbd5e1" font-size="13">Modify</text><rect x="160" y="68" rx="8" ry="8" width="400" height="26" fill="#3b82f6"></rect><text x="570" y="86" fill="#f8fafc" font-size="13">10</text><text x="10" y="124" fill="#cbd5e1" font-size="13">ReadAndExecute</text><rect x="160" y="106" rx="8" ry="8" width="280" height="26" fill="#3b82f6"></rect><text x="450" y="124" fill="#f8fafc" font-size="13">7</text><text x="10" y="162" fill="#cbd5e1" font-size="13">-536805376</text><rect x="160" y="144" rx="8" ry="8" width="280" height="26" fill="#3b82f6"></rect><text x="450" y="162" fill="#f8fafc" font-size="13">7</text><text x="10" y="200" fill="#cbd5e1" font-size="13">Read</text><rect x="160" y="182" rx="8" ry="8" width="80" height="26" fill="#3b82f6"></rect><text x="250" y="200" fill="#f8fafc" font-size="13">2</text></svg></div>
+            <div class="chart-card"><h3>Top Identities by Permission Presence</h3><svg width="760" height="260" viewBox="0 0 760 260" class="svg-chart"><text x="10" y="48" fill="#cbd5e1" font-size="13">NT AUTHORITY\Authenticated Users</text><rect x="160" y="30" rx="8" ry="8" width="560" height="26" fill="#3b82f6"></rect><text x="730" y="48" fill="#f8fafc" font-size="13">14</text><text x="10" y="86" fill="#cbd5e1" font-size="13">BUILTIN\Administrators</text><rect x="160" y="68" rx="8" ry="8" width="280" height="26" fill="#3b82f6"></rect><text x="450" y="86" fill="#f8fafc" font-size="13">7</text><text x="10" y="124" fill="#cbd5e1" font-size="13">NT AUTHORITY\SYSTEM</text><rect x="160" y="106" rx="8" ry="8" width="280" height="26" fill="#3b82f6"></rect><text x="450" y="124" fill="#f8fafc" font-size="13">7</text><text x="10" y="162" fill="#cbd5e1" font-size="13">BUILTIN\Users</text><rect x="160" y="144" rx="8" ry="8" width="280" height="26" fill="#3b82f6"></rect><text x="450" y="162" fill="#f8fafc" font-size="13">7</text><text x="10" y="200" fill="#cbd5e1" font-size="13">Shubh\Finance Team</text><rect x="160" y="182" rx="8" ry="8" width="120" height="26" fill="#3b82f6"></rect><text x="290" y="200" fill="#f8fafc" font-size="13">3</text><text x="10" y="238" fill="#cbd5e1" font-size="13">Shubh\HR Team</text><rect x="160" y="220" rx="8" ry="8" width="80" height="26" fill="#3b82f6"></rect><text x="250" y="238" fill="#f8fafc" font-size="13">2</text></svg></div>
+            <div class="chart-card"><h3>Drift Findings by Severity</h3><svg width="760" height="260" viewBox="0 0 760 260" class="svg-chart"><text x="10" y="48" fill="#cbd5e1" font-size="13">Medium</text><rect x="160" y="30" rx="8" ry="8" width="560" height="26" fill="#3b82f6"></rect><text x="730" y="48" fill="#f8fafc" font-size="13">7</text></svg></div>
+            <div class="chart-card"><h3>Top Risky Paths</h3><svg width="760" height="260" viewBox="0 0 760 260" class="svg-chart"><text x="10" y="48" fill="#cbd5e1" font-size="13">C:\TestPermissions</text><rect x="160" y="30" rx="8" ry="8" width="560" height="26" fill="#3b82f6"></rect><text x="730" y="48" fill="#f8fafc" font-size="13">1</text><text x="10" y="86" fill="#cbd5e1" font-size="13">C:\TestPermissions\Finance</text><rect x="160" y="68" rx="8" ry="8" width="560" height="26" fill="#3b82f6"></rect><text x="730" y="86" fill="#f8fafc" font-size="13">1</text><text x="10" y="124" fill="#cbd5e1" font-size="13">C:\TestPermissions\HR</text><rect x="160" y="106" rx="8" ry="8" width="560" height="26" fill="#3b82f6"></rect><text x="730" y="124" fill="#f8fafc" font-size="13">1</text><text x="10" y="162" fill="#cbd5e1" font-size="13">C:\TestPermissions\Shared</text><rect x="160" y="144" rx="8" ry="8" width="560" height="26" fill="#3b82f6"></rect><text x="730" y="162" fill="#f8fafc" font-size="13">1</text><text x="10" y="200" fill="#cbd5e1" font-size="13">C:\TestPermissions\Finance\Payroll</text><rect x="160" y="182" rx="8" ry="8" width="560" height="26" fill="#3b82f6"></rect><text x="730" y="200" fill="#f8fafc" font-size="13">1</text><text x="10" y="238" fill="#cbd5e1" font-size="13">C:\TestPermissions\Finance\Reports</text><rect x="160" y="220" rx="8" ry="8" width="560" height="26" fill="#3b82f6"></rect><text x="730" y="238" fill="#f8fafc" font-size="13">1</text></svg></div>
+        </div>
+
+        <div class="table-panel">
+            <h2>Access Path Matches</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Target</th>
+                            <th>Path</th>
+                            <th>Identity Match</th>
+                            <th>Rights</th>
+                            <th>Access Type</th>
+                            <th>Reason</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Administrators</td><td>C:\TestPermissions</td><td>BUILTIN\Administrators</td><td>FullControl</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>SYSTEM</td><td>C:\TestPermissions</td><td>NT AUTHORITY\SYSTEM</td><td>FullControl</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Users</td><td>C:\TestPermissions</td><td>BUILTIN\Users</td><td>ReadAndExecute, Synchronize</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Authenticated Users</td><td>C:\TestPermissions</td><td>NT AUTHORITY\Authenticated Users</td><td>Modify, Synchronize</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Users</td><td>C:\TestPermissions</td><td>NT AUTHORITY\Authenticated Users</td><td>Modify, Synchronize</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Authenticated Users</td><td>C:\TestPermissions</td><td>NT AUTHORITY\Authenticated Users</td><td>-536805376</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Users</td><td>C:\TestPermissions</td><td>NT AUTHORITY\Authenticated Users</td><td>-536805376</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Finance Team</td><td>C:\TestPermissions\Finance</td><td>Shubh\Finance Team</td><td>Modify, Synchronize</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Administrators</td><td>C:\TestPermissions\Finance</td><td>BUILTIN\Administrators</td><td>FullControl</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>SYSTEM</td><td>C:\TestPermissions\Finance</td><td>NT AUTHORITY\SYSTEM</td><td>FullControl</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Users</td><td>C:\TestPermissions\Finance</td><td>BUILTIN\Users</td><td>ReadAndExecute, Synchronize</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Authenticated Users</td><td>C:\TestPermissions\Finance</td><td>NT AUTHORITY\Authenticated Users</td><td>Modify, Synchronize</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Users</td><td>C:\TestPermissions\Finance</td><td>NT AUTHORITY\Authenticated Users</td><td>Modify, Synchronize</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Authenticated Users</td><td>C:\TestPermissions\Finance</td><td>NT AUTHORITY\Authenticated Users</td><td>-536805376</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Users</td><td>C:\TestPermissions\Finance</td><td>NT AUTHORITY\Authenticated Users</td><td>-536805376</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Administrators</td><td>C:\TestPermissions\HR</td><td>BUILTIN\Administrators</td><td>FullControl</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>SYSTEM</td><td>C:\TestPermissions\HR</td><td>NT AUTHORITY\SYSTEM</td><td>FullControl</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Users</td><td>C:\TestPermissions\HR</td><td>BUILTIN\Users</td><td>ReadAndExecute, Synchronize</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Authenticated Users</td><td>C:\TestPermissions\HR</td><td>NT AUTHORITY\Authenticated Users</td><td>Modify, Synchronize</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Users</td><td>C:\TestPermissions\HR</td><td>NT AUTHORITY\Authenticated Users</td><td>Modify, Synchronize</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Authenticated Users</td><td>C:\TestPermissions\HR</td><td>NT AUTHORITY\Authenticated Users</td><td>-536805376</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Users</td><td>C:\TestPermissions\HR</td><td>NT AUTHORITY\Authenticated Users</td><td>-536805376</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Administrators</td><td>C:\TestPermissions\Shared</td><td>BUILTIN\Administrators</td><td>FullControl</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>SYSTEM</td><td>C:\TestPermissions\Shared</td><td>NT AUTHORITY\SYSTEM</td><td>FullControl</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Users</td><td>C:\TestPermissions\Shared</td><td>BUILTIN\Users</td><td>ReadAndExecute, Synchronize</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Authenticated Users</td><td>C:\TestPermissions\Shared</td><td>NT AUTHORITY\Authenticated Users</td><td>Modify, Synchronize</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Users</td><td>C:\TestPermissions\Shared</td><td>NT AUTHORITY\Authenticated Users</td><td>Modify, Synchronize</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Authenticated Users</td><td>C:\TestPermissions\Shared</td><td>NT AUTHORITY\Authenticated Users</td><td>-536805376</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Users</td><td>C:\TestPermissions\Shared</td><td>NT AUTHORITY\Authenticated Users</td><td>-536805376</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Finance Team</td><td>C:\TestPermissions\Finance\Payroll</td><td>Shubh\Finance Team</td><td>Modify, Synchronize</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Administrators</td><td>C:\TestPermissions\Finance\Payroll</td><td>BUILTIN\Administrators</td><td>FullControl</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>SYSTEM</td><td>C:\TestPermissions\Finance\Payroll</td><td>NT AUTHORITY\SYSTEM</td><td>FullControl</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Users</td><td>C:\TestPermissions\Finance\Payroll</td><td>BUILTIN\Users</td><td>ReadAndExecute, Synchronize</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Authenticated Users</td><td>C:\TestPermissions\Finance\Payroll</td><td>NT AUTHORITY\Authenticated Users</td><td>Modify, Synchronize</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Users</td><td>C:\TestPermissions\Finance\Payroll</td><td>NT AUTHORITY\Authenticated Users</td><td>Modify, Synchronize</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Authenticated Users</td><td>C:\TestPermissions\Finance\Payroll</td><td>NT AUTHORITY\Authenticated Users</td><td>-536805376</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Users</td><td>C:\TestPermissions\Finance\Payroll</td><td>NT AUTHORITY\Authenticated Users</td><td>-536805376</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Finance Team</td><td>C:\TestPermissions\Finance\Reports</td><td>Shubh\Finance Team</td><td>Modify, Synchronize</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Administrators</td><td>C:\TestPermissions\Finance\Reports</td><td>BUILTIN\Administrators</td><td>FullControl</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>SYSTEM</td><td>C:\TestPermissions\Finance\Reports</td><td>NT AUTHORITY\SYSTEM</td><td>FullControl</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Users</td><td>C:\TestPermissions\Finance\Reports</td><td>BUILTIN\Users</td><td>ReadAndExecute, Synchronize</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Authenticated Users</td><td>C:\TestPermissions\Finance\Reports</td><td>NT AUTHORITY\Authenticated Users</td><td>Modify, Synchronize</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Users</td><td>C:\TestPermissions\Finance\Reports</td><td>NT AUTHORITY\Authenticated Users</td><td>Modify, Synchronize</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Authenticated Users</td><td>C:\TestPermissions\Finance\Reports</td><td>NT AUTHORITY\Authenticated Users</td><td>-536805376</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Users</td><td>C:\TestPermissions\Finance\Reports</td><td>NT AUTHORITY\Authenticated Users</td><td>-536805376</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Administrators</td><td>C:\TestPermissions\HR\Employees</td><td>BUILTIN\Administrators</td><td>FullControl</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>SYSTEM</td><td>C:\TestPermissions\HR\Employees</td><td>NT AUTHORITY\SYSTEM</td><td>FullControl</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Users</td><td>C:\TestPermissions\HR\Employees</td><td>BUILTIN\Users</td><td>ReadAndExecute, Synchronize</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Authenticated Users</td><td>C:\TestPermissions\HR\Employees</td><td>NT AUTHORITY\Authenticated Users</td><td>Modify, Synchronize</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Users</td><td>C:\TestPermissions\HR\Employees</td><td>NT AUTHORITY\Authenticated Users</td><td>Modify, Synchronize</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Authenticated Users</td><td>C:\TestPermissions\HR\Employees</td><td>NT AUTHORITY\Authenticated Users</td><td>-536805376</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr><tr><td>Users</td><td>C:\TestPermissions\HR\Employees</td><td>NT AUTHORITY\Authenticated Users</td><td>-536805376</td><td>Allow</td><td>Matched target against ACL identity in scanned scope</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="table-panel">
+            <h2>Permission Drift Findings</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Severity</th>
+                            <th>Category</th>
+                            <th>Path</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><span class="badge medium">Medium</span></td><td>Broad Access</td><td>C:\TestPermissions</td><td>Broad access identity found on this path</td></tr><tr><td><span class="badge medium">Medium</span></td><td>Broad Access</td><td>C:\TestPermissions\Finance</td><td>Broad access identity found on this path</td></tr><tr><td><span class="badge medium">Medium</span></td><td>Broad Access</td><td>C:\TestPermissions\HR</td><td>Broad access identity found on this path</td></tr><tr><td><span class="badge medium">Medium</span></td><td>Broad Access</td><td>C:\TestPermissions\Shared</td><td>Broad access identity found on this path</td></tr><tr><td><span class="badge medium">Medium</span></td><td>Broad Access</td><td>C:\TestPermissions\Finance\Payroll</td><td>Broad access identity found on this path</td></tr><tr><td><span class="badge medium">Medium</span></td><td>Broad Access</td><td>C:\TestPermissions\Finance\Reports</td><td>Broad access identity found on this path</td></tr><tr><td><span class="badge medium">Medium</span></td><td>Broad Access</td><td>C:\TestPermissions\HR\Employees</td><td>Broad access identity found on this path</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="table-panel">
+            <h2>ACL Record Preview</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Path</th>
+                            <th>Item Type</th>
+                            <th>Identity</th>
+                            <th>Rights</th>
+                            <th>Access Type</th>
+                            <th>Inherited</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>C:\TestPermissions</td><td>Folder</td><td>BUILTIN\Administrators</td><td>FullControl</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions</td><td>Folder</td><td>NT AUTHORITY\SYSTEM</td><td>FullControl</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions</td><td>Folder</td><td>BUILTIN\Users</td><td>ReadAndExecute, Synchronize</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions</td><td>Folder</td><td>NT AUTHORITY\Authenticated Users</td><td>Modify, Synchronize</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions</td><td>Folder</td><td>NT AUTHORITY\Authenticated Users</td><td>-536805376</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions\Finance</td><td>Folder</td><td>Shubh\Finance Team</td><td>Modify, Synchronize</td><td>Allow</td><td>False</td></tr><tr><td>C:\TestPermissions\Finance</td><td>Folder</td><td>BUILTIN\Administrators</td><td>FullControl</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions\Finance</td><td>Folder</td><td>NT AUTHORITY\SYSTEM</td><td>FullControl</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions\Finance</td><td>Folder</td><td>BUILTIN\Users</td><td>ReadAndExecute, Synchronize</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions\Finance</td><td>Folder</td><td>NT AUTHORITY\Authenticated Users</td><td>Modify, Synchronize</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions\Finance</td><td>Folder</td><td>NT AUTHORITY\Authenticated Users</td><td>-536805376</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions\HR</td><td>Folder</td><td>Shubh\HR Team</td><td>Read, Synchronize</td><td>Allow</td><td>False</td></tr><tr><td>C:\TestPermissions\HR</td><td>Folder</td><td>BUILTIN\Administrators</td><td>FullControl</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions\HR</td><td>Folder</td><td>NT AUTHORITY\SYSTEM</td><td>FullControl</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions\HR</td><td>Folder</td><td>BUILTIN\Users</td><td>ReadAndExecute, Synchronize</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions\HR</td><td>Folder</td><td>NT AUTHORITY\Authenticated Users</td><td>Modify, Synchronize</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions\HR</td><td>Folder</td><td>NT AUTHORITY\Authenticated Users</td><td>-536805376</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions\Shared</td><td>Folder</td><td>BUILTIN\Administrators</td><td>FullControl</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions\Shared</td><td>Folder</td><td>NT AUTHORITY\SYSTEM</td><td>FullControl</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions\Shared</td><td>Folder</td><td>BUILTIN\Users</td><td>ReadAndExecute, Synchronize</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions\Shared</td><td>Folder</td><td>NT AUTHORITY\Authenticated Users</td><td>Modify, Synchronize</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions\Shared</td><td>Folder</td><td>NT AUTHORITY\Authenticated Users</td><td>-536805376</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions\Finance\Payroll</td><td>Folder</td><td>Shubh\Finance Team</td><td>Modify, Synchronize</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions\Finance\Payroll</td><td>Folder</td><td>BUILTIN\Administrators</td><td>FullControl</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions\Finance\Payroll</td><td>Folder</td><td>NT AUTHORITY\SYSTEM</td><td>FullControl</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions\Finance\Payroll</td><td>Folder</td><td>BUILTIN\Users</td><td>ReadAndExecute, Synchronize</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions\Finance\Payroll</td><td>Folder</td><td>NT AUTHORITY\Authenticated Users</td><td>Modify, Synchronize</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions\Finance\Payroll</td><td>Folder</td><td>NT AUTHORITY\Authenticated Users</td><td>-536805376</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions\Finance\Reports</td><td>Folder</td><td>Shubh\Finance Team</td><td>Modify, Synchronize</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions\Finance\Reports</td><td>Folder</td><td>BUILTIN\Administrators</td><td>FullControl</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions\Finance\Reports</td><td>Folder</td><td>NT AUTHORITY\SYSTEM</td><td>FullControl</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions\Finance\Reports</td><td>Folder</td><td>BUILTIN\Users</td><td>ReadAndExecute, Synchronize</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions\Finance\Reports</td><td>Folder</td><td>NT AUTHORITY\Authenticated Users</td><td>Modify, Synchronize</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions\Finance\Reports</td><td>Folder</td><td>NT AUTHORITY\Authenticated Users</td><td>-536805376</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions\HR\Employees</td><td>Folder</td><td>Shubh\HR Team</td><td>Read, Synchronize</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions\HR\Employees</td><td>Folder</td><td>BUILTIN\Administrators</td><td>FullControl</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions\HR\Employees</td><td>Folder</td><td>NT AUTHORITY\SYSTEM</td><td>FullControl</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions\HR\Employees</td><td>Folder</td><td>BUILTIN\Users</td><td>ReadAndExecute, Synchronize</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions\HR\Employees</td><td>Folder</td><td>NT AUTHORITY\Authenticated Users</td><td>Modify, Synchronize</td><td>Allow</td><td>True</td></tr><tr><td>C:\TestPermissions\HR\Employees</td><td>Folder</td><td>NT AUTHORITY\Authenticated Users</td><td>-536805376</td><td>Allow</td><td>True</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

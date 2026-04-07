@@ -1,0 +1,44 @@
+﻿[
+    {
+        "Severity":  "Medium",
+        "Category":  "Broad Access",
+        "Path":  "C:\\TestPermissions",
+        "Description":  "Broad access identity found on this path"
+    },
+    {
+        "Severity":  "Medium",
+        "Category":  "Broad Access",
+        "Path":  "C:\\TestPermissions\\Finance",
+        "Description":  "Broad access identity found on this path"
+    },
+    {
+        "Severity":  "Medium",
+        "Category":  "Broad Access",
+        "Path":  "C:\\TestPermissions\\HR",
+        "Description":  "Broad access identity found on this path"
+    },
+    {
+        "Severity":  "Medium",
+        "Category":  "Broad Access",
+        "Path":  "C:\\TestPermissions\\Shared",
+        "Description":  "Broad access identity found on this path"
+    },
+    {
+        "Severity":  "Medium",
+        "Category":  "Broad Access",
+        "Path":  "C:\\TestPermissions\\Finance\\Payroll",
+        "Description":  "Broad access identity found on this path"
+    },
+    {
+        "Severity":  "Medium",
+        "Category":  "Broad Access",
+        "Path":  "C:\\TestPermissions\\Finance\\Reports",
+        "Description":  "Broad access identity found on this path"
+    },
+    {
+        "Severity":  "Medium",
+        "Category":  "Broad Access",
+        "Path":  "C:\\TestPermissions\\HR\\Employees",
+        "Description":  "Broad access identity found on this path"
+    }
+]

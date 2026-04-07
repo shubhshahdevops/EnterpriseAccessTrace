@@ -1,0 +1,402 @@
+﻿[
+    {
+        "Path":  "C:\\TestPermissions",
+        "ItemType":  "Folder",
+        "Identity":  "BUILTIN\\Administrators",
+        "Rights":  "FullControl",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "ContainerInherit, ObjectInherit",
+        "PropagationFlags":  "None"
+    },
+    {
+        "Path":  "C:\\TestPermissions",
+        "ItemType":  "Folder",
+        "Identity":  "NT AUTHORITY\\SYSTEM",
+        "Rights":  "FullControl",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "ContainerInherit, ObjectInherit",
+        "PropagationFlags":  "None"
+    },
+    {
+        "Path":  "C:\\TestPermissions",
+        "ItemType":  "Folder",
+        "Identity":  "BUILTIN\\Users",
+        "Rights":  "ReadAndExecute, Synchronize",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "ContainerInherit, ObjectInherit",
+        "PropagationFlags":  "None"
+    },
+    {
+        "Path":  "C:\\TestPermissions",
+        "ItemType":  "Folder",
+        "Identity":  "NT AUTHORITY\\Authenticated Users",
+        "Rights":  "Modify, Synchronize",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "None",
+        "PropagationFlags":  "None"
+    },
+    {
+        "Path":  "C:\\TestPermissions",
+        "ItemType":  "Folder",
+        "Identity":  "NT AUTHORITY\\Authenticated Users",
+        "Rights":  "-536805376",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "ContainerInherit, ObjectInherit",
+        "PropagationFlags":  "InheritOnly"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\Finance",
+        "ItemType":  "Folder",
+        "Identity":  "Shubh\\Finance Team",
+        "Rights":  "Modify, Synchronize",
+        "AccessType":  "Allow",
+        "Inherited":  false,
+        "InheritanceFlags":  "ContainerInherit, ObjectInherit",
+        "PropagationFlags":  "None"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\Finance",
+        "ItemType":  "Folder",
+        "Identity":  "BUILTIN\\Administrators",
+        "Rights":  "FullControl",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "ContainerInherit, ObjectInherit",
+        "PropagationFlags":  "None"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\Finance",
+        "ItemType":  "Folder",
+        "Identity":  "NT AUTHORITY\\SYSTEM",
+        "Rights":  "FullControl",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "ContainerInherit, ObjectInherit",
+        "PropagationFlags":  "None"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\Finance",
+        "ItemType":  "Folder",
+        "Identity":  "BUILTIN\\Users",
+        "Rights":  "ReadAndExecute, Synchronize",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "ContainerInherit, ObjectInherit",
+        "PropagationFlags":  "None"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\Finance",
+        "ItemType":  "Folder",
+        "Identity":  "NT AUTHORITY\\Authenticated Users",
+        "Rights":  "Modify, Synchronize",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "None",
+        "PropagationFlags":  "None"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\Finance",
+        "ItemType":  "Folder",
+        "Identity":  "NT AUTHORITY\\Authenticated Users",
+        "Rights":  "-536805376",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "ContainerInherit, ObjectInherit",
+        "PropagationFlags":  "InheritOnly"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\HR",
+        "ItemType":  "Folder",
+        "Identity":  "Shubh\\HR Team",
+        "Rights":  "Read, Synchronize",
+        "AccessType":  "Allow",
+        "Inherited":  false,
+        "InheritanceFlags":  "ContainerInherit, ObjectInherit",
+        "PropagationFlags":  "None"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\HR",
+        "ItemType":  "Folder",
+        "Identity":  "BUILTIN\\Administrators",
+        "Rights":  "FullControl",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "ContainerInherit, ObjectInherit",
+        "PropagationFlags":  "None"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\HR",
+        "ItemType":  "Folder",
+        "Identity":  "NT AUTHORITY\\SYSTEM",
+        "Rights":  "FullControl",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "ContainerInherit, ObjectInherit",
+        "PropagationFlags":  "None"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\HR",
+        "ItemType":  "Folder",
+        "Identity":  "BUILTIN\\Users",
+        "Rights":  "ReadAndExecute, Synchronize",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "ContainerInherit, ObjectInherit",
+        "PropagationFlags":  "None"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\HR",
+        "ItemType":  "Folder",
+        "Identity":  "NT AUTHORITY\\Authenticated Users",
+        "Rights":  "Modify, Synchronize",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "None",
+        "PropagationFlags":  "None"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\HR",
+        "ItemType":  "Folder",
+        "Identity":  "NT AUTHORITY\\Authenticated Users",
+        "Rights":  "-536805376",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "ContainerInherit, ObjectInherit",
+        "PropagationFlags":  "InheritOnly"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\Shared",
+        "ItemType":  "Folder",
+        "Identity":  "BUILTIN\\Administrators",
+        "Rights":  "FullControl",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "ContainerInherit, ObjectInherit",
+        "PropagationFlags":  "None"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\Shared",
+        "ItemType":  "Folder",
+        "Identity":  "NT AUTHORITY\\SYSTEM",
+        "Rights":  "FullControl",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "ContainerInherit, ObjectInherit",
+        "PropagationFlags":  "None"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\Shared",
+        "ItemType":  "Folder",
+        "Identity":  "BUILTIN\\Users",
+        "Rights":  "ReadAndExecute, Synchronize",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "ContainerInherit, ObjectInherit",
+        "PropagationFlags":  "None"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\Shared",
+        "ItemType":  "Folder",
+        "Identity":  "NT AUTHORITY\\Authenticated Users",
+        "Rights":  "Modify, Synchronize",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "None",
+        "PropagationFlags":  "None"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\Shared",
+        "ItemType":  "Folder",
+        "Identity":  "NT AUTHORITY\\Authenticated Users",
+        "Rights":  "-536805376",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "ContainerInherit, ObjectInherit",
+        "PropagationFlags":  "InheritOnly"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\Finance\\Payroll",
+        "ItemType":  "Folder",
+        "Identity":  "Shubh\\Finance Team",
+        "Rights":  "Modify, Synchronize",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "ContainerInherit, ObjectInherit",
+        "PropagationFlags":  "None"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\Finance\\Payroll",
+        "ItemType":  "Folder",
+        "Identity":  "BUILTIN\\Administrators",
+        "Rights":  "FullControl",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "ContainerInherit, ObjectInherit",
+        "PropagationFlags":  "None"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\Finance\\Payroll",
+        "ItemType":  "Folder",
+        "Identity":  "NT AUTHORITY\\SYSTEM",
+        "Rights":  "FullControl",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "ContainerInherit, ObjectInherit",
+        "PropagationFlags":  "None"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\Finance\\Payroll",
+        "ItemType":  "Folder",
+        "Identity":  "BUILTIN\\Users",
+        "Rights":  "ReadAndExecute, Synchronize",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "ContainerInherit, ObjectInherit",
+        "PropagationFlags":  "None"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\Finance\\Payroll",
+        "ItemType":  "Folder",
+        "Identity":  "NT AUTHORITY\\Authenticated Users",
+        "Rights":  "Modify, Synchronize",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "None",
+        "PropagationFlags":  "None"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\Finance\\Payroll",
+        "ItemType":  "Folder",
+        "Identity":  "NT AUTHORITY\\Authenticated Users",
+        "Rights":  "-536805376",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "ContainerInherit, ObjectInherit",
+        "PropagationFlags":  "InheritOnly"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\Finance\\Reports",
+        "ItemType":  "Folder",
+        "Identity":  "Shubh\\Finance Team",
+        "Rights":  "Modify, Synchronize",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "ContainerInherit, ObjectInherit",
+        "PropagationFlags":  "None"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\Finance\\Reports",
+        "ItemType":  "Folder",
+        "Identity":  "BUILTIN\\Administrators",
+        "Rights":  "FullControl",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "ContainerInherit, ObjectInherit",
+        "PropagationFlags":  "None"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\Finance\\Reports",
+        "ItemType":  "Folder",
+        "Identity":  "NT AUTHORITY\\SYSTEM",
+        "Rights":  "FullControl",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "ContainerInherit, ObjectInherit",
+        "PropagationFlags":  "None"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\Finance\\Reports",
+        "ItemType":  "Folder",
+        "Identity":  "BUILTIN\\Users",
+        "Rights":  "ReadAndExecute, Synchronize",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "ContainerInherit, ObjectInherit",
+        "PropagationFlags":  "None"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\Finance\\Reports",
+        "ItemType":  "Folder",
+        "Identity":  "NT AUTHORITY\\Authenticated Users",
+        "Rights":  "Modify, Synchronize",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "None",
+        "PropagationFlags":  "None"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\Finance\\Reports",
+        "ItemType":  "Folder",
+        "Identity":  "NT AUTHORITY\\Authenticated Users",
+        "Rights":  "-536805376",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "ContainerInherit, ObjectInherit",
+        "PropagationFlags":  "InheritOnly"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\HR\\Employees",
+        "ItemType":  "Folder",
+        "Identity":  "Shubh\\HR Team",
+        "Rights":  "Read, Synchronize",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "ContainerInherit, ObjectInherit",
+        "PropagationFlags":  "None"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\HR\\Employees",
+        "ItemType":  "Folder",
+        "Identity":  "BUILTIN\\Administrators",
+        "Rights":  "FullControl",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "ContainerInherit, ObjectInherit",
+        "PropagationFlags":  "None"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\HR\\Employees",
+        "ItemType":  "Folder",
+        "Identity":  "NT AUTHORITY\\SYSTEM",
+        "Rights":  "FullControl",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "ContainerInherit, ObjectInherit",
+        "PropagationFlags":  "None"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\HR\\Employees",
+        "ItemType":  "Folder",
+        "Identity":  "BUILTIN\\Users",
+        "Rights":  "ReadAndExecute, Synchronize",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "ContainerInherit, ObjectInherit",
+        "PropagationFlags":  "None"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\HR\\Employees",
+        "ItemType":  "Folder",
+        "Identity":  "NT AUTHORITY\\Authenticated Users",
+        "Rights":  "Modify, Synchronize",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "None",
+        "PropagationFlags":  "None"
+    },
+    {
+        "Path":  "C:\\TestPermissions\\HR\\Employees",
+        "ItemType":  "Folder",
+        "Identity":  "NT AUTHORITY\\Authenticated Users",
+        "Rights":  "-536805376",
+        "AccessType":  "Allow",
+        "Inherited":  true,
+        "InheritanceFlags":  "ContainerInherit, ObjectInherit",
+        "PropagationFlags":  "InheritOnly"
+    }
+]
